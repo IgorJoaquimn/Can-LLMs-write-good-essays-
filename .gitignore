@@ -1,1 +1,5 @@
 extra/
+api_key.py
+openai-env
+.env
+__pycache__
