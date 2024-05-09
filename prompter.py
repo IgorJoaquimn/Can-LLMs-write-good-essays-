@@ -9,10 +9,10 @@ client = OpenAI(api_key=api_key)
 system_prompt = "".join(open("prompts/system prompt matias.txt").readlines())
 
 # Prompt de entrada do modelo, ex: escreva a redação com o tema XYZ
-user_prompt   = "".join(open("prompts/Enem 2020 Sem texto motivador.txt").readlines()) 
+user_prompt   = "".join(open("prompts/Enem 2021 Sem texto motivador.txt").readlines()) 
 
 # Pasta onde cada resposta será gravada (se não existir vai dar erro)
-output_folder = "Redações/system prompt matias/Enem 2020 Sem Texto Motivador/"
+output_folder = "Redações/system prompt matias/Enem 2021 Sem Texto Motivador/"
 
 # Modelo/Pasta onde cada resposta será gravada (se não existir vai dar erro)
 model = "gpt-3.5-turbo" 
