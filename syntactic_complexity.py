@@ -77,6 +77,7 @@ def analyze_sentences(sentences):
   depths = [profundidade_maxima(sentence.to_tree()) for sentence in sentences]
   profundidade_media = np.mean(depths)
   profundidade_max = np.max(depths)
+  profundidade_rel = np.mean([profundidade_maxima(sentence.to_tree())/len(sentence) for sentence in sentences])
   
   # Calculate Type-Token Ratio (TTR)
   tokens = [token for sentence in sentences for token in sentence if token["upos"] != "PUNCT"]
