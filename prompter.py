@@ -7,10 +7,10 @@ client = OpenAI(api_key=api_key)
 system_prompt = "".join(open("prompts/Instruções com Cartilha da Redação system.txt").readlines())
 
 # Prompt de entrada do modelo, ex: escreva a redação com o tema XYZ
-user_prompt   = "".join(open("prompts/Desafios para o enfrentamento da invisibilidade do trabalho de cuidado realizado pela mulher no Brasil.txt").readlines())
+user_prompt   = "".join(open("prompts/Enem 2019 Sem texto motivador.txt").readlines())
 
 # Pasta onde cada resposta será gravada (se não existir vai dar erro)
-output_folder = "Redações/Prompt: Instruções com Cartilha da Redação/Desafios para o enfrentamento da invisibilidade do trabalho de cuidado realizado pela mulher no Brasil/"
+output_folder = "Redações/Prompt: Instruções com Cartilha da Redação/Enem 2019 Sem texto motivador/"
 
 # Modelo/Pasta onde cada resposta será gravada (se não existir vai dar erro)
 model = "gpt-3.5-turbo"
@@ -20,7 +20,7 @@ messages=[
   ]
 
 # Quantidade de redações que serão geradas
-n_repetitions = 2
+n_repetitions = 10
 
 for i in range(n_repetitions):
   # Chamada da api
