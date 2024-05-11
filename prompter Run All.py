@@ -16,11 +16,11 @@ def call_openai(model, output_folder, messages,n):
         f.write(completion.choices[0].message.content)
 
 
-model = "gpt-4"
+model = "gpt-3.5-turbo"
 system_prompts  = ["prompts/system prompt matias.txt","prompts/Instruções com Cartilha da Redação system.txt"]
-user_prompts    = [f"prompts/Enem 20{i} Sem texto motivador.txt" for i in [22]]
+user_prompts    = [f"prompts/Enem 20{i} Com texto motivador.txt" for i in [22]]
 
-n_iter = 100
+n_iter = 60
 for s in system_prompts:
    for u in user_prompts:
     system_prompt = "".join(open(s).readlines())
