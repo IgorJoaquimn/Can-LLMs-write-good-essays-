@@ -12,15 +12,15 @@ def call_openai(model, output_folder, messages,n):
                     messages = messages)
       
       # Termina escrevendo o arquivo
-      with open(f"{output_folder}{model}/Igor_{i+1}.txt","w") as f:
+      with open(f"{output_folder}{model}/Igor_2_{i+1}.txt","w") as f:
         f.write(completion.choices[0].message.content)
 
 
 model = "gpt-3.5-turbo"
-system_prompts  = ["prompts/system prompt matias.txt","prompts/Instruções com Cartilha da Redação system.txt"]
-user_prompts    = [f"prompts/Enem 20{i} Com texto motivador.txt" for i in [22]]
+system_prompts  = ["prompts/system prompt vazio.txt"]
+user_prompts    = [f"prompts/Enem 2022 Com texto motivador.txt",f"prompts/Enem 2022 Sem texto motivador.txt"]
 
-n_iter = 60
+n_iter = 50
 for s in system_prompts:
    for u in user_prompts:
     system_prompt = "".join(open(s).readlines())
