@@ -1,4 +1,4 @@
-from openai import OpenAI  # pip install openai
+    from openai import OpenAI  # type: ignore # pip install openai
 from api_key import api_key # É necessário criar o arquivo api_key.py e a variavel api_key = ""
 import os
 
@@ -6,23 +6,24 @@ client = OpenAI(api_key=api_key)
 
 # Arquivos com a instrução passada para o modelo
 # system_prompt = "".join(open("prompts/Instruções com Cartilha da Redação system.txt").readlines())
-system_prompt = "".join(open("prompts/system prompt matias.txt").readlines())
+#system_prompt = "".join(open("prompts/system prompt matias.txt").readlines())
 
 # Prompt de entrada do modelo, ex: escreva a redação com o tema XYZ
-user_prompt   = "".join(open("prompts/Enem 2019 Sem Texto Motivador.txt").readlines()) 
+user_prompt   = "".join(open("prompts/Enem 2022 Sem Texto Motivador.txt").readlines()) 
 
 # Pasta onde cada resposta será gravada (se não existir vai dar erro)
-output_folder = "Redações/system prompt matias/Enem 2019 Sem Texto Motivador/"
+output_folder = "Redações/system prompt matias/Enem 2022 Sem Texto Motivador/"
 
 # Modelo/Pasta onde cada resposta será gravada (se não existir vai dar erro)
-model = "gpt-3.5-turbo"
+model = "gpt-4" 
 messages=[
-    {"role": "system", "content": system_prompt},
+    #{"role": "system", "content": system_prompt},
+    {"role": "system", "content": ""},
     {"role": "user", "content": user_prompt},
   ]
 
 # Quantidade de redações que serão geradas
-n_repetitions = 1
+n_repetitions = 20
 
 if not os.path.exists(f"{output_folder}{model}/"):
     os.makedirs(f"{output_folder}{model}/")

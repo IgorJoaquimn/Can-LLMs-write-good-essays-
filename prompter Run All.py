@@ -16,9 +16,9 @@ def call_openai(model, output_folder, messages,n):
         f.write(completion.choices[0].message.content)
 
 
-model = "gpt-3.5-turbo"
+model = "gpt-4"
 system_prompts  = ["prompts/system prompt vazio.txt"]
-user_prompts    = [f"prompts/Enem 2022 Com texto motivador.txt",f"prompts/Enem 2022 Sem texto motivador.txt"]
+user_prompts    = [f"prompts/Enem 2022 Com Texto Motivador.txt",f"prompts/Enem 2022 Sem Texto Motivador.txt"]
 
 n_iter = 50
 for s in system_prompts:
