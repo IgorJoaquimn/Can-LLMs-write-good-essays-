@@ -70,6 +70,7 @@ import numpy as np
 def average_ttr(tokens, n, no_samples):
     ttr_list = []
     for _ in range(no_samples):
+        n = min(n,len(tokens))
         segment_tokens = np.random.choice(tokens, n, replace=False)
         types = len(np.unique(segment_tokens))
         ttr = types / n
